@@ -22,7 +22,6 @@ $(window).scroll(function () {
 //     comments: "4 bright green circles high in the sky going in circles then one bright green light at my front door."
 //   },
 
-// Level 1: Automatic Table and Date Search (Required)
 
 // Get a reference to the table body
 var tbody = d3.select("tbody");
@@ -77,13 +76,6 @@ function runEnter() {
     return td[searchFilter] == inputValue;
   };
 
-  // users= users.filter(function(item) {
-  //   for (var key in filter) {
-  //     if (item[key] === undefined || item[key] != filter[key])
-  //       return false;
-  //   }
-  //   return true;
-  // });
 
   var filteredData = tableData.filter(datetimeFilter);
   console.log(filteredData);
@@ -118,19 +110,4 @@ function runReset() {
     });
   });
 
-  // resets filter input box to original example text
-  //document.getElementById("datetime").reset();
 };
-
-
-
-// Level 2: Multiple Search Categories (Optional)
-// Complete all of Level 1 criteria.
-//
-// Using multiple input tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
-//
-// date/time
-// city
-// state
-// country
-// shape
