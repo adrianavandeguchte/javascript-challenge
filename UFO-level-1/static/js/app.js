@@ -37,7 +37,6 @@ tableData.forEach((ufoReport) => {
 });
 
 
-// Use a date form in your HTML document and write JavaScript code that will listen for events and search through the date/time column to find rows that match user input.
 //listen for event
   //filter data
     //rewrite table
@@ -62,21 +61,20 @@ function runEnter() {
 
   // Select dropdown menu
   var dropdownMenu = d3.select("#selFilter");
+  // assign search filter
   var searchFilter = dropdownMenu.property("value");
-  var searchID = "#"+searchFilter
-  console.log(searchFilter);
 
   // Select the input element and get the raw HTML node
-  var inputElement = d3.select(searchID);
+  var inputElement = d3.select("#datetime");
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
 
 
-  // Use input value to filter tableData
+  // Use input value to filter tableData, searchfilter used to specify which value to compare against
   function datetimeFilter(td) {
-    return td.searchID == inputValue;
+    return td[searchFilter] == inputValue;
   };
   var filteredData = tableData.filter(datetimeFilter);
   console.log(filteredData);
