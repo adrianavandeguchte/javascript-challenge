@@ -76,6 +76,15 @@ function runEnter() {
   function datetimeFilter(td) {
     return td[searchFilter] == inputValue;
   };
+
+  // users= users.filter(function(item) {
+  //   for (var key in filter) {
+  //     if (item[key] === undefined || item[key] != filter[key])
+  //       return false;
+  //   }
+  //   return true;
+  // });
+
   var filteredData = tableData.filter(datetimeFilter);
   console.log(filteredData);
   // empties the table
@@ -112,6 +121,8 @@ function runReset() {
   // resets filter input box to original example text
   //document.getElementById("datetime").reset();
 };
+
+
 
 // Level 2: Multiple Search Categories (Optional)
 // Complete all of Level 1 criteria.
